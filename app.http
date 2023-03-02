@@ -1,0 +1,95 @@
+//api1 sceanario1
+GET http://localhost:3000/todos/?status=TO%20DO
+###
+//scenario2
+GET http://localhost:3000/todos/?priority=HIGH
+###
+//scenario3
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+###
+//scenario4
+GET http://localhost:3000/todos/?search_q=Buy
+###
+//scenario5
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+###
+//scenario6
+GET http://localhost:3000/todos/?category=HOME
+###
+//scenario7
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+###
+
+
+//api2
+GET http://localhost:3000/todos/1/
+###
+
+//api3
+GET http://localhost:3000/agenda/?date=2021-02-22
+###
+
+//api4
+POST http://localhost:3000/todos/ 
+Content-Type: application/json
+{
+  "id": 6,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO",
+  "category": "HOME",
+  "dueDate": "2021-02-22"
+}
+###
+
+
+//api5 
+//scenario1 (update status)
+
+PUT http://localhost:3000/todos/3/
+Content-Type: application/json
+
+{
+    "status": "DONE"
+}
+###
+
+//scenario2 (update priority)
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "priority": "HIGH"
+}
+###
+
+//scenario3 (update todo)
+PUT http://localhost:3000/todos/1/
+Content-Type: application/json
+
+{
+    "todo": "Clean the garden"
+}
+###
+
+//scenario4 (update category)
+PUT http://localhost:3000/todos/3/
+Content-Type: application/json
+
+{
+    "category": "LEARNING"
+}
+###
+
+//scenario5 (update dueDate)
+PUT http://localhost:3000/todos/3/
+Content-Type: application/json
+
+{
+    "dueDate": "1999-07-22"
+}
+###
+
+//api6
+DELETE http://localhost:3000/todos/4/
+###
